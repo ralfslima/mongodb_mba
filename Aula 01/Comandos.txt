@@ -1,0 +1,46 @@
+1° Listar todas as bases de dados
+SQL: SHOW DATABASES;
+MONGODB: show dbs;
+
+2° Selecionar base de dados
+SQL: USE nome_da_base OU USING nome_da_base;
+MONGODB: use nome_da_base;
+
+3° Cadastrar uma pessoa
+SQL: INSERT INTO pessoas VALUES ('Alice', 28, true);
+MONGODB: db.pessoas.insertOne({nome:'Alice', idade:28, estuda:true});
+
+4° Selecionar dados
+SQL: SELECT * FROM pessoas;
+MONGODB: db.pessoas.find();
+
+5° Inserir diversos registros
+SQL: INSERT INTO pessoas VALUES (), (), ();
+MONGODB: db.pessoas.insertMany([
+  {nome:'Daniel', idade:17, estuda:true},
+  {nome:'Carla', idade:22, estuda:true},
+  {nome:'Paulo', idade:43, estuda:false}
+]);
+
+6° Utilizar cláusula WHERE
+SQL: SELECT * FROM pessoas WHERE estuda = false;
+MONGODB: db.pessoas.find({estuda:false});
+
+7° Selecionar dados específicos (colunas)
+SQL: SELECT nome, idade FROM pessoas WHERE estuda = true;
+MONGODB: db.pessoas.find({estuda:true}, {nome:1, idade:1, _id:0});
+
+8° Realizar uma alteração
+SQL: UPDATE pessoas SET idade = 27 WHERE nome = 'Daniel';
+MONGODB UM REGISTRO: db.pessoas.updateOne({nome:'Daniel'}, {$set:{idade:27}});
+MONGODB MÚLTIPLOS REGISTROS: db.pessoas.updateOne({nome:'Daniel'}, {$set:{idade:27}});
+
+9° Realizar uma remoção
+SQL: DELETE FROM pessoas WHERE nome = 'Carla';
+MONGODB UM REGISTRO: db.pessoas.deleteOne({nome:'Carla'});
+MONGODB MÚLTIPLOS REGISTROS: db.pessoas.deleteMany({nome:'Carla'});
+
+
+
+
+
