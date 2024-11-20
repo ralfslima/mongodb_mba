@@ -39,8 +39,3 @@ MONGODB MÚLTIPLOS REGISTROS: db.pessoas.updateOne({nome:'Daniel'}, {$set:{idade
 SQL: DELETE FROM pessoas WHERE nome = 'Carla';
 MONGODB UM REGISTRO: db.pessoas.deleteOne({nome:'Carla'});
 MONGODB MÚLTIPLOS REGISTROS: db.pessoas.deleteMany({nome:'Carla'});
-
-
-
-
-
