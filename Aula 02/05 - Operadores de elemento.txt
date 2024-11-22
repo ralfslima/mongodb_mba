@@ -1,0 +1,7 @@
+// Operadores de elementos
+
+$exists -> Verifica se possui determinada propriedade
+db.produtos.find({estoque:{$exists:true}});
+
+$type -> Verifica o tipo de dado de uma proriedade
+db.produtos.find({preco:{$type:'int'}});

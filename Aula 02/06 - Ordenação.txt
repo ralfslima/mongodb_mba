@@ -1,0 +1,5 @@
+// Ordenar dados
+
+Ordem crescente: db.produtos.find({}, {_id:0, nome:1, preco:1}).sort({preco:1});
+
+Ordem decrescente: db.produtos.find({}, {_id:0, nome:1, preco:1}).sort({preco:-1});

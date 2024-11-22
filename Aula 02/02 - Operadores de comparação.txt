@@ -1,0 +1,25 @@
+// Operadores de comparação
+
+$eq -> Igualdade
+db.produtos.find({estoque : {$eq:80}});
+
+$ne -> Diferente
+db.produtos.find({estoque : {$ne:80}});
+
+$gt -> Maior
+db.produtos.find({estoque:{$gt:100}});
+
+$gte-> Maior ou igual
+db.produtos.find({estoque:{$gte:100}});
+
+$lt -> Menor
+db.produtos.find({estoque:{$l:100}});
+
+$lte-> Menor ou igual
+db.produtos.find({estoque:{$lt:100}});
+
+$in -> Contêm registros
+db.produtos.find({preco:{$in:[119.9, 249.99]}});
+
+$nin-> Não contêm registros
+db.produtos.find({preco:{$nin:[119.9, 249.99]}});

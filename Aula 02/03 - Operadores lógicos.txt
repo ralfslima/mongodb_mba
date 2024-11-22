@@ -1,0 +1,13 @@
+// Operadores lógicos
+
+$and -> E(and)
+db.produtos.find({$and:[{preco:{$gt:200}}, {estoque:{$gt:100}}]});
+
+$or  -> OU(or)
+db.produtos.find({$or:[{nome:{$eq:'Teclado Microsoft'}}, {nome:{$eq:'Telcado HP'}}]});
+
+$not -> NEGAÇÃO(not)
+db.produtos.find({estoque:{$not:{$gte:100}}});
+
+$nor -> NEGAÇÃO(not), utilizando uma estrutura em array
+db.produtos.find({$nor:[{nome:'Teclado Microsoft'}, {nome:'Teclado HP'}]});

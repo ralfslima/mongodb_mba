@@ -1,0 +1,7 @@
+// Operadores de array
+
+$size -> Tamanho do array
+db.produtos.find({tags:{$size:2}});
+
+$elemMatch -> Contêm no vetor
+db.produtos.find({tags:{$elemMatch:{$eq:'informática'}}});

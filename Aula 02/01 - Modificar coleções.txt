@@ -1,0 +1,28 @@
+// Modificar estrutura dos documentos (propriedades)
+
+1° Cadastrar um produto
+db.produtos.insertOne({ome:'Mesa'});
+
+2° Alterar característica do documento
+db.produtos.updateMany(
+  {ome:{$exists:true}},
+  {$rename:{'ome':'nome'}}
+);
+
+3° Remover uma característica:
+db.produtos.updateMany(
+  {nome:{$exists:true}},
+  {$unset:{'nome':''}}
+);
+
+
+
+
+
+
+
+
+
+
+
+
