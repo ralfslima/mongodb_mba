@@ -1,0 +1,29 @@
+// Inserindo dados de alunos na coleção "alunos"
+db.alunos.insertMany([
+  { nome: "Ana", nota1: 7.5, nota2: 8.0, turno: "Manhã" },
+  { nome: "Carlos", nota1: 5.0, nota2: 6.5, turno: "Tarde" },
+  { nome: "Beatriz", nota1: 9.0, nota2: 9.5, turno: "Manhã" },
+  { nome: "João", nota1: 6.0, nota2: 7.0, turno: "Noite" },
+  { nome: "Maria", nota1: 8.5, nota2: 7.0, turno: "Manhã" },
+  { nome: "Pedro", nota1: 7.0, nota2: 6.0, turno: "Tarde" },
+  { nome: "Fernanda", nota1: 8.5, nota2: 8.0, turno: "Noite" },
+  { nome: "Ricardo", nota1: 6.5, nota2: 6.0, turno: "Tarde" },
+  { nome: "Luciana", nota1: 9.5, nota2: 10.0, turno: "Manhã" },
+  { nome: "Eduardo", nota1: 7.0, nota2: 6.5, turno: "Noite" }
+]);
+
+Questão 1: Obtenha todos os alunos do turno "Manhã"
+
+Questão 2: Obtenha o nome dos alunos e a média de suas notas (nota1 e nota2)
+
+Questão 3: Obtenha os alunos que têm nota1 maior que 7
+
+Questão 4: Calcule a média geral de todas as notas1 dos alunos
+
+Questão 5: Liste os alunos do turno "Tarde" que possuem nota1 maior ou igual a 7
+
+Questão 6: Conte quantos alunos estudam em cada turno
+
+Questão 7: Liste os alunos cujas notas1 e notas2 são ambas maiores ou iguais a 7
+
+Questão 8: Calcule a soma das notas2 de todos os alunos

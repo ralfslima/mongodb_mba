@@ -1,0 +1,27 @@
+*FILTRAGEM DE DADOS - LIKE*
+
+1° Contêm: SELECT * FROM produtos WHERE nome LIKE "%tênis%";
+db.produtos.find(
+{nome:{ $regex:'tênis', $options:'i' }}
+);
+
+2° Início: SELECT * FROM produtos WHERE nome LIKE "tênis%";
+db.produtos.find(
+{nome:{ $regex:'^c', $options:'i' }}
+);
+
+
+3° Fim: SELECT * FROM produtos WHERE nome LIKE "%tênis";
+db.produtos.find(
+{nome:{ $regex:'l$', $options:'i' }}
+);
+
+4° Verificar se inicia e finaliza com determinado termo.
+db.produtos.find(
+{nome:{ $regex:'^t.*l$', $options:'i' }}
+);
+
+
+
+
+
