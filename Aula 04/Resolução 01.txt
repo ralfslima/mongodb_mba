@@ -1,0 +1,48 @@
+Questão 1: Obtenha todos os alunos do turno "Manhã"
+db.alunos.find({turno:'Manhã'});
+
+Questão 2: Obtenha o nome dos alunos e a média de suas notas (nota1 e nota2)
+db.alunos.aggregate([{
+     $project:{
+       _id:0, 
+       nome:1, 
+       media:{$avg:['$nota1', '$nota2']}
+    }
+}]);
+
+Questão 3: Obtenha os alunos que têm nota1 maior que 7
+db.alunos.find(
+{nota1 : {$gt:7}}, 
+{_id:0, nome:1, nota1:1}
+);
+
+Questão 4: Calcule a média geral de todas as notas1 dos alunos
+db.alunos.aggregate([{
+$group:{_id:null, mediaNota1:{$avg:'$nota1'}}
+}]);
+
+Questão 5: Liste os alunos do turno "Tarde" que possuem nota1 maior ou igual a 7
+db.alunos.find({turno:'Tarde', nota1:{$gte:7}});
+
+Questão 6: Conte quantos alunos estudam em cada turno
+db.alunos.aggregate([
+  {$group:{_id:'$turno', total:{$sum:1}}}
+]);
+
+Questão 7: Liste os alunos cujas notas1 e notas2 são ambas maiores ou iguais a 7
+db.alunos.find({
+nota1:{$gte:7},
+nota2:{$gte:7}
+});
+
+Questão 8: Calcule a soma das notas2 de todos os alunos
+db.alunos.find({
+nota1:{$gte:7},
+nota2:{$gte:7}
+});
+
+
+
+
+
+
