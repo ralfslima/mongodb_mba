@@ -1,0 +1,29 @@
+// Inserindo dados de compras na coleção "compras"
+db.compras.insertMany([
+  { produto: "Smartphone", valor: 799.99, data: new Date("2024-02-10") },
+  { produto: "Notebook", valor: 2200.00, data: new Date("2024-03-12") },
+  { produto: "Cadeira Gamer", valor: 600.00, data: new Date("2024-03-22") },
+  { produto: "Fone de Ouvido", valor: 250.50, data: new Date("2024-03-01") },
+  { produto: "Smartwatch", valor: 400.00, data: new Date("2024-03-20") },
+  { produto: "Teclado Mecânico", valor: 300.00, data: new Date("2024-04-05") }
+]);
+
+// Questão 1: Liste todos os produtos que foram comprados no mês de março de 2024.
+DICA: Para trabalhar com datas, utilize a estrutura: new Date("2024-03-01"), exemplo:
+{ $match: { data: { $gte: new Date("2020-01-01"), $lt: new Date("2020-12-32") } } }, nesse exemplo estamos selecionando o ano de 2020.
+
+// Questão 2: Encontre a soma total do valor das compras de "Smartphone" e "Notebook".
+
+// Questão 3: Liste todos os produtos comprados que possuem a palavra "fone" no nome (ignorando maiúsculas/minúsculas).
+
+// Questão 4: Calcule a média de valor gasto nas compras de "Cadeira Gamer" e "Smartwatch".
+
+// Questão 5: Encontre o produto mais caro comprado e o valor da compra.
+
+// Questão 6: Liste os produtos comprados no dia 1 de março de 2024.
+
+// Questão 7: Encontre quantas compras foram feitas de "Smartphone".
+
+// Questão 8: Encontre todos os produtos comprados que começam com a letra "T" (usando regex).
+
+// Questão 9: Encontre o total de compras realizadas para cada produto.

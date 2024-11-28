@@ -1,0 +1,33 @@
+// Inserindo dados de livros na coleção "livros"
+db.livros.insertMany([
+  { titulo: "O Senhor dos Anéis", autor: "J.R.R. Tolkien", genero: "Fantasia", ano_lancamento: 1954, avaliacao: 9.3, paginas: 1216, status: "Publicado" },
+  { titulo: "1984", autor: "George Orwell", genero: "Distopia", ano_lancamento: 1949, avaliacao: 9.2, paginas: 328, status: "Publicado" },
+  { titulo: "Harry Potter e a Pedra Filosofal", autor: "J.K. Rowling", genero: "Fantasia", ano_lancamento: 1997, avaliacao: 9.1, paginas: 223, status: "Publicado" },
+  { titulo: "O Pequeno Príncipe", autor: "Antoine de Saint-Exupéry", genero: "Infantil", ano_lancamento: 1943, avaliacao: 9.5, paginas: 96, status: "Publicado" },
+  { titulo: "Dom Casmurro", autor: "Machado de Assis", genero: "Literatura Brasileira", ano_lancamento: 1899, avaliacao: 8.7, paginas: 320, status: "Publicado" },
+  { titulo: "O Código Da Vinci", autor: "Dan Brown", genero: "Mistério", ano_lancamento: 2003, avaliacao: 8.9, paginas: 592, status: "Publicado" },
+  { titulo: "Cem Anos de Solidão", autor: "Gabriel García Márquez", genero: "Realismo Mágico", ano_lancamento: 1967, avaliacao: 9.0, paginas: 448, status: "Publicado" },
+  { titulo: "O Alquimista", autor: "Paulo Coelho", genero: "Filosofia", ano_lancamento: 1988, avaliacao: 8.7, paginas: 208, status: "Publicado" },
+  { titulo: "A Revolução dos Bichos", autor: "George Orwell", genero: "Política", ano_lancamento: 1945, avaliacao: 8.8, paginas: 152, status: "Publicado" },
+  { titulo: "O Hobbit", autor: "J.R.R. Tolkien", genero: "Fantasia", ano_lancamento: 1937, avaliacao: 8.9, paginas: 310, status: "Publicado" }
+]);
+
+// Questão 1: Obtenha todos os livros com avaliação maior que 8
+
+// Questão 2: Liste o título, autor e avaliação dos livros lançados após 1990
+
+// Questão 3: Encontre todos os livros do gênero "Fantasia"
+
+// Questão 4: Calcule a média de avaliação de todos os livros
+
+// Questão 5: Liste os títulos dos livros com mais de 300 páginas
+
+// Questão 6: Encontre o livro mais antigo (primeiro ano de lançamento)
+
+// Questão 7: Encontre os livros com o status "Publicado"
+
+// Questão 8: Calcule a soma do número total de páginas de todos os livros
+
+// Questão 9: Liste o título dos livros que têm avaliação maior ou igual a 9
+
+// Questão 10: Encontre o livro com o maior número de páginas

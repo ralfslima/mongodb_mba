@@ -1,0 +1,31 @@
+// Inserindo dados de séries na coleção "series"
+db.series.insertMany([
+  { titulo: "Stranger Things", genero: "Ficção Científica", ano_lancamento: 2016, avaliacao: 8.7, temporadas: 4, episodios_por_temporada: 8, status: "Em andamento" },
+  { titulo: "Breaking Bad", genero: "Drama", ano_lancamento: 2008, avaliacao: 9.5, temporadas: 5, episodios_por_temporada: 13, status: "Finalizada" },
+  { titulo: "The Crown", genero: "Drama", ano_lancamento: 2016, avaliacao: 8.6, temporadas: 6, episodios_por_temporada: 10, status: "Em andamento" },
+  { titulo: "Game of Thrones", genero: "Fantasia", ano_lancamento: 2011, avaliacao: 9.3, temporadas: 8, episodios_por_temporada: 10, status: "Finalizada" },
+  { titulo: "The Office", genero: "Comédia", ano_lancamento: 2005, avaliacao: 8.9, temporadas: 9, episodios_por_temporada: 24, status: "Finalizada" },
+  { titulo: "Friends", genero: "Comédia", ano_lancamento: 1994, avaliacao: 8.8, temporadas: 10, episodios_por_temporada: 24, status: "Finalizada" },
+  { titulo: "Narcos", genero: "Crime", ano_lancamento: 2015, avaliacao: 8.8, temporadas: 3, episodios_por_temporada: 10, status: "Finalizada" },
+  { titulo: "Dark", genero: "Ficção Científica", ano_lancamento: 2017, avaliacao: 8.8, temporadas: 3, episodios_por_temporada: 10, status: "Finalizada" },
+  { titulo: "Money Heist", genero: "Crime", ano_lancamento: 2017, avaliacao: 8.3, temporadas: 5, episodios_por_temporada: 10, status: "Finalizada" },
+  { titulo: "The Mandalorian", genero: "Ação", ano_lancamento: 2019, avaliacao: 8.8, temporadas: 3, episodios_por_temporada: 8, status: "Em andamento" }
+]);
+
+// Questão 1: Obtenha todas as séries com avaliação maior que 8
+
+// Questão 2: Liste o título, gênero e avaliação das séries lançadas após 2010
+
+// Questão 3: Encontre todas as séries do gênero "Ficção Científica"
+
+// Questão 4: Calcule a média de avaliação de todas as séries
+
+// Questão 5: Liste os títulos das séries com mais de 8 temporadas
+
+// Questão 6: Encontre a série mais antiga (primeiro ano de lançamento)
+
+// Questão 7: Encontre as séries que têm o status "Em andamento"
+
+// Questão 8: Liste o título das séries que têm a avaliação maior ou igual a 8.5
+
+// Questão 9: Encontre a série com o maior número de temporadas
