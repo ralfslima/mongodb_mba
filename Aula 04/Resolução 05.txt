@@ -1,0 +1,56 @@
+// Questão 1: Liste todos os produtos que foram comprados no mês de março de 2024.
+db.compras.aggregate([
+  { $match: { data: { $gte: new Date("2024-03-01"), $lt: new Date("2024-04-01") } } },
+  { $project: { produto: 1, valor: 1 } }
+]);
+
+// Questão 2: Encontre a soma total do valor das compras de "Smartphone" e "Notebook".
+db.compras.aggregate([
+  { $match: { produto: { $in: ["Smartphone", "Notebook"] } } },
+  { $group: { _id: null, totalComprado: { $sum: "$valor" } } }
+]);
+
+// Questão 3: Liste todos os produtos comprados que possuem a palavra "fone" no nome (ignorando maiúsculas/minúsculas).
+db.compras.aggregate([
+  { $match: { produto: { $regex: "fone", $options: "i" } } },
+  { $project: { produto: 1, valor: 1 } }
+]);
+
+// Questão 4: Calcule a média de valor gasto nas compras de "Cadeira Gamer" e "Smartwatch".
+db.compras.aggregate([
+  { $match: { produto: { $in: ["Cadeira Gamer", "Smartwatch"] } } },
+  { $group: { _id: null, totalGasto: { $sum: "$valor" }, numCompras: { $count: {} } } },
+  { $project: { mediaGasto: { $divide: ["$totalGasto", "$numCompras"] } } }
+]);
+
+// Questão 5: Encontre o produto mais caro comprado e o valor da compra.
+db.compras.aggregate([
+  { $sort: { valor: -1 } },
+  { $limit: 1 },
+  { $project: { produto: 1, valor: 1 } }
+]);
+
+// Questão 6: Liste os produtos comprados no dia 1 de março de 2024.
+db.compras.aggregate([
+  { $match: { data: new Date("2024-03-01") } },
+  { $project: { produto: 1, valor: 1 } }
+]);
+
+// Questão 7: Encontre quantas compras foram feitas de "Smartphone".
+db.compras.aggregate([
+  { $match: { produto: "Smartphone" } },
+  { $count: "totalCompras" }
+]);
+
+// Questão 8: Encontre todos os produtos comprados que começam com a letra "T" (usando regex).
+db.compras.aggregate([
+  { $match: { produto: { $regex: "^T", $options: "i" } } },
+  { $project: { produto: 1, valor: 1 } }
+]);
+
+// Questão 9: Encontre o total de compras realizadas para cada produto.
+db.compras.aggregate([
+  { $group: { _id: "$produto", totalComprado: { $sum: "$valor" } } },
+  { $sort: { totalComprado: -1 } }
+]);
+

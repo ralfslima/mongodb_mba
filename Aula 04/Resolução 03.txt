@@ -1,0 +1,34 @@
+// Questão 1: Obtenha todas as séries com avaliação maior que 8
+db.series.find({ avaliacao: { $gt: 8 } });
+
+// Questão 2: Liste o título, gênero e avaliação das séries lançadas após 2010
+db.series.find({ ano_lancamento: { $gt: 2010 } }, { titulo: 1, genero: 1, avaliacao: 1 });
+
+// Questão 3: Encontre todas as séries do gênero "Ficção Científica"
+db.series.find({ genero: "Ficção Científica" });
+
+// Questão 4: Calcule a média de avaliação de todas as séries
+db.series.aggregate([
+  { $group: { _id: null, mediaAvaliacao: { $avg: "$avaliacao" } } }
+]);
+
+// Questão 5: Liste os títulos das séries com mais de 8 temporadas
+db.series.find({ temporadas: { $gt: 8 } }, { titulo: 1 });
+
+// Questão 6: Encontre a série mais antiga (primeiro ano de lançamento)
+db.series.aggregate([
+  { $sort: { ano_lancamento: 1 } },  // Ordena por ano de lançamento, em ordem crescente
+  { $limit: 1 }  // Limita para o primeiro (mais antigo)
+]);
+
+// Questão 7: Encontre as séries que têm o status "Em andamento"
+db.series.find({ status: "Em andamento" });
+
+// Questão 8: Liste o título das séries que têm a avaliação maior ou igual a 8.5
+db.series.find({ avaliacao: { $gte: 8.5 } }, { titulo: 1 });
+
+// Questão 9: Encontre a série com o maior número de temporadas
+db.series.aggregate([
+  { $sort: { temporadas: -1 } },  // Ordena pela quantidade de temporadas de forma decrescente
+  { $limit: 1 }  // Limita para o primeiro (com mais temporadas)
+]);

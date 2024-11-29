@@ -1,0 +1,39 @@
+// Questão 1: Obtenha todos os livros com avaliação maior que 8
+db.livros.find({ avaliacao: { $gt: 8 } });
+
+// Questão 2: Liste o título, autor e avaliação dos livros lançados após 1990
+db.livros.find({ ano_lancamento: { $gt: 1990 } }, { titulo: 1, autor: 1, avaliacao: 1 });
+
+// Questão 3: Encontre todos os livros do gênero "Fantasia"
+db.livros.find({ genero: "Fantasia" });
+
+// Questão 4: Calcule a média de avaliação de todos os livros
+db.livros.aggregate([
+  { $group: { _id: null, mediaAvaliacao: { $avg: "$avaliacao" } } }
+]);
+
+// Questão 5: Liste os títulos dos livros com mais de 300 páginas
+db.livros.find({ paginas: { $gt: 300 } }, { titulo: 1 });
+
+// Questão 6: Encontre o livro mais antigo (primeiro ano de lançamento)
+db.livros.aggregate([
+  { $sort: { ano_lancamento: 1 } },  // Ordena por ano de lançamento, em ordem crescente
+  { $limit: 1 }  // Limita para o primeiro (mais antigo)
+]);
+
+// Questão 7: Encontre os livros com o status "Publicado"
+db.livros.find({ status: "Publicado" });
+
+// Questão 8: Calcule a soma do número total de páginas de todos os livros
+db.livros.aggregate([
+  { $group: { _id: null, totalPaginas: { $sum: "$paginas" } } }
+]);
+
+// Questão 9: Liste o título dos livros que têm avaliação maior ou igual a 9
+db.livros.find({ avaliacao: { $gte: 9 } }, { titulo: 1 });
+
+// Questão 10: Encontre o livro com o maior número de páginas
+db.livros.aggregate([
+  { $sort: { paginas: -1 } },  // Ordena pelo número de páginas de forma decrescente
+  { $limit: 1 }  // Limita para o primeiro (com mais páginas)
+]);

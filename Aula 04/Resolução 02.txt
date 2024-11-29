@@ -1,0 +1,39 @@
+// Questão 1: Obtenha todos os dados das pessoas do sexo "Feminino"
+db.pessoas.find({ sexo: "Feminino" });
+
+// Questão 2: Obtenha o nome e a idade das pessoas que moram em "São Paulo"
+db.pessoas.find({ cidade: "São Paulo" }, { nome: 1, idade: 1 });
+
+// Questão 3: Obtenha a média de idade das pessoas
+db.pessoas.aggregate([
+  { $group: { _id: null, mediaIdade: { $avg: "$idade" } } }
+]);
+
+// Questão 4: Encontre todas as pessoas com idade superior a 30 anos
+db.pessoas.find({ idade: { $gt: 30 } });
+
+// Questão 5: Conte quantas pessoas existem em cada cidade
+db.pessoas.aggregate([
+  { $group: { _id: "$cidade", totalPessoas: { $sum: 1 } } }
+]);
+
+// Questão 6: Liste o nome e a profissão das pessoas com profissão "Médico"
+db.pessoas.find({ profissao: "Médico" }, { nome: 1, profissao: 1 });
+
+// Questão 7: Encontre as pessoas que têm a profissão de "Engenheiro" ou "Programador"
+db.pessoas.find({ profissao: { $in: ["Engenheiro", "Programador"] } });
+
+// Questão 8: Encontre a pessoa mais velha
+db.pessoas.aggregate([
+  { $sort: { idade: -1 } }, // Ordena pela idade de forma decrescente
+  { $limit: 1 } // Limita a consulta para o primeiro da lista (mais velha)
+]);
+
+// Questão 9: Calcule o total de pessoas que são do sexo masculino
+db.pessoas.aggregate([
+  { $match: { sexo: "Masculino" } }, // Filtra pessoas do sexo Masculino
+  { $count: "totalMasculino" } // Conta quantas pessoas atendem a essa condição
+]);
+
+// Questão 10: Obtenha o nome e a cidade das pessoas com idade entre 25 e 35 anos
+db.pessoas.find({ idade: { $gte: 25, $lte: 35 } }, { nome: 1, cidade: 1 });
